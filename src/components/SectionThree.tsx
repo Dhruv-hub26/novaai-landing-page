@@ -44,6 +44,7 @@ export default function SectionThree() {
 
   return (
     <section
+      id="architecture"
       ref={sectionReveal.ref as React.RefObject<HTMLDivElement>}
       style={sectionReveal.style}
       className="relative flex min-h-screen flex-col justify-center px-5 py-24 sm:min-h-[100svh] sm:px-8 md:px-12"

@@ -1,16 +1,34 @@
 import { Hexagon } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal'
 
-const navLinks = ['About', 'Blog', 'Contact']
+const navLinks = [
+  { label: 'Projects', target: 'capabilities', isProjects: true },
+  { label: 'About', target: 'architecture' },
+  { label: 'Contact', target: 'contact' },
+]
 
-function NavLink({ label, delay, isProjects }: { label: string; delay: number; isProjects?: boolean }) {
+function handleScroll(e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, targetId: string) {
+  e.preventDefault()
+  const target = document.getElementById(targetId)
+  if (target) {
+    const navbarHeight = 70 // approx height of the fixed navbar
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY
+    window.scrollTo({
+      top: targetPosition - navbarHeight,
+      behavior: 'smooth'
+    })
+  }
+}
+
+function NavLink({ label, delay, isProjects, target }: { label: string; delay: number; isProjects?: boolean; target: string }) {
   const { ref, style } = useReveal<HTMLAnchorElement>({ delay })
   return (
     <a
       ref={ref}
       style={style}
-      href="#"
-      className="text-sm text-white/85 transition-colors duration-300 hover:text-white"
+      href={`#${target}`}
+      onClick={(e) => handleScroll(e, target)}
+      className="text-sm text-white/85 transition-colors duration-200 hover:text-white"
     >
       {label}
       {isProjects && (
@@ -33,8 +51,9 @@ export default function Navbar() {
         <a
           ref={logoReveal.ref}
           style={logoReveal.style}
-          href="#"
-          className="flex items-center gap-2 text-white no-underline"
+          href="#hero"
+          onClick={(e) => handleScroll(e, 'hero')}
+          className="flex items-center gap-2 text-white no-underline transition-colors duration-200 hover:text-white/80"
         >
           <Hexagon size={24} strokeWidth={1.5} />
           <span className="text-lg font-medium tracking-tight sm:text-xl">novaai</span>
@@ -42,9 +61,14 @@ export default function Navbar() {
 
         {/* Center nav links — hidden below md */}
         <div className="hidden items-center gap-8 md:flex lg:gap-10">
-          <NavLink label="Projects" delay={100} isProjects />
           {navLinks.map((link, i) => (
-            <NavLink key={link} label={link} delay={100 + (i + 1) * 100} />
+            <NavLink 
+              key={link.label} 
+              label={link.label} 
+              target={link.target}
+              isProjects={link.isProjects}
+              delay={100 + (i + 1) * 100} 
+            />
           ))}
         </div>
 
@@ -52,7 +76,8 @@ export default function Navbar() {
         <button
           ref={ctaReveal.ref}
           style={ctaReveal.style}
-          className="rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-2 text-xs text-white transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.08] sm:px-5 sm:text-sm"
+          onClick={(e) => handleScroll(e, 'contact')}
+          className="rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-2 text-xs text-white transition-colors duration-200 hover:border-white/20 hover:bg-white/[0.08] sm:px-5 sm:text-sm"
         >
           Get Free Consultation
         </button>

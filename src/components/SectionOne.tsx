@@ -27,6 +27,7 @@ export default function SectionOne() {
 
   return (
     <section
+      id="hero"
       className="relative flex min-h-screen flex-col justify-between px-5 pb-12 pt-24 sm:min-h-[100svh] sm:px-8 sm:pt-28 md:px-12 md:pb-16"
     >
       {/* Top row: service list (left) + intro text (right) */}

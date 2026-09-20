@@ -5,7 +5,7 @@ const VIDEO_URL =
 
 const FRAME_COUNT = 90
 const FRAME_MAX_WIDTH = 960
-const LERP_FACTOR = 0.12
+const LERP_FACTOR = 0.075
 const DPR = Math.min(window.devicePixelRatio || 1, 2)
 
 export default function ScrollVideo() {
