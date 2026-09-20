@@ -40,7 +40,7 @@ function CapabilityRow({
     <div
       ref={ref}
       style={style}
-      className={`flex gap-5 py-5 ${!isLast ? 'border-b border-white/15' : ''}`}
+      className={`flex gap-5 py-5 transition-colors duration-300 hover:bg-white/[0.02] -mx-5 px-5 sm:-mx-6 sm:px-6 rounded-lg ${!isLast ? 'border-b border-white/[0.08]' : ''}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -54,7 +54,7 @@ function CapabilityRow({
             size={16}
             className="text-white/40 transition-all duration-300"
             style={{
-              transform: hovered ? 'translateX(2px)' : 'translateX(0)',
+              transform: hovered ? 'translateX(4px)' : 'translateX(0)',
               color: hovered ? 'white' : undefined,
             }}
           />
@@ -82,7 +82,7 @@ export default function SectionTwo() {
         <div
           ref={badgeReveal.ref as React.RefObject<HTMLDivElement>}
           style={badgeReveal.style}
-          className="inline-flex items-center border-l-2 border-white bg-white/15 px-3 py-1.5 backdrop-blur-md"
+          className="inline-flex items-center border-l-2 border-white bg-white/[0.04] px-3 py-1.5 backdrop-blur-xl"
         >
           <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-white">
             Insight On Demand
@@ -95,7 +95,7 @@ export default function SectionTwo() {
           style={rightCopyReveal.style}
           className="max-w-sm sm:text-right"
         >
-          <p className="text-lg leading-relaxed text-white drop-shadow-md sm:text-xl">
+          <p className="text-lg leading-relaxed text-neutral-400 drop-shadow-md sm:text-xl">
             Our AI doesn't just respond — it interprets, sharpens, and delivers the signal you need.
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function SectionTwo() {
             ref={h2Reveal.ref as React.RefObject<HTMLDivElement>}
             style={h2Reveal.style}
           >
-            <h2 className="text-5xl font-normal leading-[1.05] tracking-tight text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
+            <h2 className="text-5xl font-medium leading-[1.05] tracking-tight text-white drop-shadow-lg sm:text-6xl lg:text-7xl">
               Learn to see
               <br />
               brilliantly.
@@ -123,7 +123,7 @@ export default function SectionTwo() {
             style={bodyReveal.style}
             className="mt-6 max-w-md"
           >
-            <p className="text-sm leading-relaxed text-white/80 drop-shadow-md sm:text-base">
+            <p className="text-sm leading-relaxed text-neutral-400 drop-shadow-md sm:text-base">
               From the first sketch to the final render, Nova turns raw intent into decisions your team can act on —
               quietly, precisely, at speed.
             </p>
@@ -135,18 +135,18 @@ export default function SectionTwo() {
             style={ctaReveal.style}
             className="mt-8 flex flex-wrap gap-3"
           >
-            <button className="flex items-center gap-1.5 rounded-full bg-white px-5 py-2.5 text-xs font-medium text-black transition-colors duration-300 hover:bg-white/85 sm:text-sm">
+            <button className="group flex items-center gap-1.5 rounded-full border border-transparent bg-white px-5 py-2.5 text-xs font-medium text-black transition-colors duration-300 hover:border-white/20 hover:bg-white/85 sm:text-sm">
               Run the demo
-              <ChevronRight size={14} />
+              <ChevronRight size={14} className="transition-transform group-hover:translate-x-1" />
             </button>
-            <button className="rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-xs backdrop-blur-md transition-colors duration-300 hover:bg-white/20 sm:text-sm">
+            <button className="rounded-full border border-white/[0.08] bg-white/[0.04] px-5 py-2.5 text-xs text-white backdrop-blur-xl transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.08] sm:text-sm">
               Free consultation
             </button>
           </div>
         </div>
 
         {/* Right: frosted capability panel */}
-        <div className="w-full max-w-md rounded-2xl border border-white/15 bg-white/10 px-5 backdrop-blur-md sm:px-6">
+        <div className="w-full max-w-md rounded-3xl border border-white/[0.08] bg-white/[0.04] px-5 backdrop-blur-xl shadow-2xl shadow-black/50 sm:px-6">
           {capabilities.map((cap, i) => (
             <CapabilityRow
               key={cap.index}

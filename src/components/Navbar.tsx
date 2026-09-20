@@ -26,8 +26,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/15"
-      style={{ backdropFilter: 'none' }}
+      className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.08] bg-black/10 backdrop-blur-xl"
     >
       <div className="flex items-center justify-between px-5 py-4 sm:px-8 md:px-12">
         {/* Logo */}
@@ -53,7 +52,7 @@ export default function Navbar() {
         <button
           ref={ctaReveal.ref}
           style={ctaReveal.style}
-          className="rounded-md border border-white/20 bg-white/15 px-4 py-2 text-xs backdrop-blur-md transition-colors duration-300 hover:bg-white/25 sm:px-5 sm:text-sm"
+          className="rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-2 text-xs text-white transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.08] sm:px-5 sm:text-sm"
         >
           Get Free Consultation
         </button>
