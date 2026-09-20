@@ -24,11 +24,14 @@ function App() {
 
           <SectionTwo />
 
-          {/* Additional spacer if desired, or go straight to SectionThree */}
+          {/* Spacer to prevent SectionTwo and SectionThree collision */}
           <div className="h-[40vh]" aria-hidden="true" />
 
           <SectionThree />
         </main>
+        
+        {/* Gradient mask to smooth canvas fade into the dark footer */}
+        <div className="h-48 w-full bg-gradient-to-b from-transparent via-[#0a0a0a]/80 to-[#0a0a0a]" aria-hidden="true" />
         
         <Footer />
       </div>

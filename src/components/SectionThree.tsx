@@ -3,23 +3,25 @@ import { Zap, Cpu, Database } from 'lucide-react'
 
 function SignalChart() {
   return (
-    <div className="relative mt-4 h-24 w-full overflow-hidden rounded-lg bg-black/20 p-2">
-      <svg
-        className="h-full w-full stroke-white/50"
-        viewBox="0 0 100 40"
-        preserveAspectRatio="none"
-        fill="none"
-        strokeWidth="1.5"
-      >
-        <path
-          d="M0 20 Q 10 20, 15 10 T 30 20 T 45 30 T 60 15 T 75 25 T 90 20 T 100 20"
-          className="animate-[dash_3s_linear_infinite]"
-          strokeDasharray="100"
-          strokeDashoffset="0"
-        />
-      </svg>
-      {/* Decorative scanning line effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent w-[200%] animate-[scan_2s_linear_infinite]" />
+    <div className="mt-6 overflow-hidden rounded-xl bg-white/[0.02] p-4 border border-white/[0.05]">
+      <div className="relative h-16 w-full">
+        <svg
+          className="h-full w-full stroke-white/50"
+          viewBox="0 0 100 40"
+          preserveAspectRatio="none"
+          fill="none"
+          strokeWidth="1.5"
+        >
+          <path
+            d="M0 20 Q 10 20, 15 10 T 30 20 T 45 30 T 60 15 T 75 25 T 90 20 T 100 20"
+            className="animate-[dash_3s_linear_infinite]"
+            strokeDasharray="100"
+            strokeDashoffset="0"
+          />
+        </svg>
+        {/* Decorative scanning line effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent w-[200%] animate-[scan_2s_linear_infinite]" />
+      </div>
       
       <style>{`
         @keyframes dash {

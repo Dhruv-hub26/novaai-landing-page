@@ -44,7 +44,7 @@ function CapabilityRow({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <span className="mt-0.5 font-mono text-[11px] tracking-[0.15em] text-white/55 shrink-0">
+      <span className="mt-0.5 font-mono text-[11px] tracking-[0.15em] text-zinc-400 font-medium shrink-0">
         {index}
       </span>
       <div className="flex-1">
@@ -59,7 +59,7 @@ function CapabilityRow({
             }}
           />
         </div>
-        <p className="mt-1.5 text-sm leading-relaxed text-white/70">{body}</p>
+        <p className="mt-1.5 text-sm leading-relaxed text-neutral-200">{body}</p>
       </div>
     </div>
   )
@@ -84,7 +84,7 @@ export default function SectionTwo() {
           style={badgeReveal.style}
           className="inline-flex items-center border-l-2 border-white bg-white/[0.04] px-3 py-1.5 backdrop-blur-xl"
         >
-          <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-white">
+          <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-400 font-medium">
             Insight On Demand
           </span>
         </div>
@@ -95,7 +95,7 @@ export default function SectionTwo() {
           style={rightCopyReveal.style}
           className="max-w-sm sm:text-right"
         >
-          <p className="text-lg leading-relaxed text-neutral-400 drop-shadow-md sm:text-xl">
+          <p className="text-lg leading-relaxed text-neutral-200 drop-shadow-md sm:text-xl">
             Our AI doesn't just respond — it interprets, sharpens, and delivers the signal you need.
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function SectionTwo() {
             style={bodyReveal.style}
             className="mt-6 max-w-md"
           >
-            <p className="text-sm leading-relaxed text-neutral-400 drop-shadow-md sm:text-base">
+            <p className="text-sm leading-relaxed text-neutral-200 drop-shadow-md sm:text-base">
               From the first sketch to the final render, Nova turns raw intent into decisions your team can act on —
               quietly, precisely, at speed.
             </p>

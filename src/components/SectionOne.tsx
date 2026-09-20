@@ -12,7 +12,7 @@ function ServiceItem({ label, delay }: { label: string; delay: number }) {
     <span
       ref={ref}
       style={style}
-      className="font-mono text-xs uppercase tracking-[0.15em] text-white/90 drop-shadow-md"
+      className="font-mono text-xs uppercase tracking-[0.15em] text-zinc-400 font-medium drop-shadow-md"
     >
       {label}
     </span>
@@ -44,7 +44,7 @@ export default function SectionOne() {
           style={introReveal.style}
           className="max-w-xs sm:text-right"
         >
-          <p className="text-lg leading-relaxed text-neutral-400 drop-shadow-md sm:text-xl">
+          <p className="text-lg leading-relaxed text-neutral-200 drop-shadow-md sm:text-xl">
             We design automation that brings clarity, precision, and efficiency to the way your company operates.
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function SectionOne() {
             style={badgeReveal.style}
             className="mb-5 inline-flex items-center border-l-2 border-white bg-white/[0.04] px-3 py-1.5 backdrop-blur-xl"
           >
-            <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-white">
+            <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-400 font-medium">
               We Automate 100+ Businesses
             </span>
           </div>
@@ -96,7 +96,7 @@ export default function SectionOne() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/60">
+              <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-400 font-medium">
                 Online / Ready to connect
               </span>
             </div>
